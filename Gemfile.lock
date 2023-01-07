@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/Joaquinb2000/materialize-sass-rails-7.git
+  revision: c89a6bfe691a9f50ec02a264fa7480461db81780
+  specs:
+    materialize-sass (1.1.0.alpha)
+      autoprefixer-rails (>= 9.1.0)
+      sassc-rails (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -98,6 +106,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.12.0)
     execjs (2.8.1)
+    faker (3.1.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -121,8 +131,8 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
-    materialize-sass (1.0.0.1)
-      autoprefixer-rails (>= 6.0.3)
+    material_icons (4.0.0)
+      railties (>= 3.2)
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
@@ -241,9 +251,11 @@ DEPENDENCIES
   capybara
   debug
   devise
+  faker
   importmap-rails
   jbuilder
-  materialize-sass
+  material_icons
+  materialize-sass!
   puma (~> 5.0)
   rails (~> 7.0.4)
   sassc-rails

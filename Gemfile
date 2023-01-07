@@ -27,11 +27,16 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'materialize-sass'
+gem 'materialize-sass', git: "https://github.com/Joaquinb2000/materialize-sass-rails-7.git"
 
 gem "sassc-rails"
 
+gem 'material_icons'
+
 gem "devise"
+
+gem "faker"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
