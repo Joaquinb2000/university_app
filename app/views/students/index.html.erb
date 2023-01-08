@@ -1,0 +1,8 @@
+<h1>Students Listing</h1>
+<div class="row">
+    <% @students.each do |student| %>
+        <div class="col s6 m6">
+            <%= render partial: "student", locals:{ student: student, show_page: false} %>
+        </div>
+    <% end %>
+</div>

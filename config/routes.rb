@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'students', to: "students#index"
+  get 'student/:id', to: "students#show"
   root 'home#index'
 
   resources :courses

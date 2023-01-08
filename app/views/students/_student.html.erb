@@ -1,0 +1,20 @@
+  <div class="card cyan darken-3">
+    <div class="card-content white-text">
+          <% if show_page %>
+             <i class="material-icons">person_outline</i>
+          <% end %>
+        <span class="card-title">
+           <strong><%= student.name %>: <%= student.email%></strong>
+        </span>
+        <%if show_page%>
+        <div class="card-action">
+            <h3>Enrolled Courses</h3>
+        </div>
+        <% else %>
+          <p> Course Enrollments: None </p>
+          <div class="card-action">
+            <%= link_to "View profile", "/student/#{student.id}" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
