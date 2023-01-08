@@ -1,0 +1,8 @@
+<% if !notice.nil? || !alert.nil? %>
+   <div id="flash"
+      class="card-panel <%= notice ? "light-green lighten-1" : "yellow lighten-3 blue-grey-text text-darken-3" %>"
+      style= "display:none"
+   >
+      <%= notice || alert %>
+   </div>
+<% end %>

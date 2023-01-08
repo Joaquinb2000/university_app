@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card-panel margin-v">
+        <div class="header">
+            <h3 class="center align"><%= title %></h2>
+        </div>
+        <div class="row">
+            <%= form_for(resource, as: resource_name, url: path, html: {data: {turbo: false}, class: "col s12"}) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+
+                    <%= yield f %>
+            <% end %>
+        </div>
+    </div>
+</div>

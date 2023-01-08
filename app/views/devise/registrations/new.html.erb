@@ -1,0 +1,45 @@
+<%= render layout: "devise/shared/card_form_wrapper", locals: {
+  title: "Sign Up",
+  path: registration_path(resource_name),
+  method: :post } do |f| %>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :name, "Full name" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :email %>
+        <%= f.email_field :email, autocomplete: "email" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.label :password, "Password (#{@minimum_password_length} characters minimum)" %>
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="input-field col s6">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+    </div>
+
+
+      <div class="input-field right-align">
+        <%= f.submit "Sign up", class: "waves-effect waves-light btn"%>
+      </div>
+
+
+    <div class="right-align">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+<% end %>
+
+
+
