@@ -163,6 +163,7 @@ GEM
     nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.4.5)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -263,12 +264,14 @@ DEPENDENCIES
   capybara
   debug
   devise
+  execjs
   faker
   importmap-rails
   jbuilder
   kaminari
   material_icons
   materialize-sass!
+  pg
   puma (~> 5.0)
   rails (~> 7.0.4)
   sassc-rails

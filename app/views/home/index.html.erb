@@ -1,20 +1,23 @@
 <div class="container">
-  <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="https://media.istockphoto.com/id/1093523312/photo/rear-view-of-large-group-of-students-raising-arms-during-a-class-at-amphitheater.jpg?b=1&s=170667a&w=0&k=20&c=07ojuBu6epofjrLazmvHK5vaBJ0BjjQL6c_RnwX-Yoo=">
-      <span class="card-title activator "><h1><strong>QUALITY EDUCATION</strong></h1></span>
+  <% if !user_signed_in? %>
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://media.istockphoto.com/id/1093523312/photo/rear-view-of-large-group-of-students-raising-arms-during-a-class-at-amphitheater.jpg?b=1&s=170667a&w=0&k=20&c=07ojuBu6epofjrLazmvHK5vaBJ0BjjQL6c_RnwX-Yoo=">
+        <span class="card-title activator "><h1><strong>QUALITY EDUCATION</strong></h1></span>
+      </div>
+      <div class="card-content">
+          <div class="row valign-wrapper">
+              <div class="col s6"><h2><strong><p>Future of Technology Education</p></strong></h2></div>
+              <div class="col s6 center-align">
+                <%= link_to new_user_registration_path, class: "waves-effect waves-light btn-large" do %>
+                  <i class="material-icons right">arrow_forward</i>
+                  Join Today!
+                <% end %>
+              </div>
+          </div>
+      </div>
     </div>
-    <div class="card-content">
-        <div class="row valign-wrapper">
-            <div class="col s6"><h2><strong><p>Future of Technology Education</p></strong></h2></div>
-            <div class="col s6 center-align">
-              <%= link_to new_user_registration_path, class: "waves-effect waves-light btn-large" do %>
-                <i class="material-icons right">arrow_forward</i>
-                Join Today!
-              <% end %>
-            </div>
-        </div>
-
-    </div>
-  </div>
+  <% else %>
+  <h1>Hello, <%= current_user.name %></h1>
+  <% end %>
 </div>
