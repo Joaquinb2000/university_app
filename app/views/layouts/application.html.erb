@@ -7,8 +7,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-       <meta name="turbo-visit-control" content="reload">
-
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -21,7 +19,9 @@
     </header>
     <main>
       <div class="container">
-        <%= yield %>
+        <%= turbo_frame_tag "main" do %>
+          <%= yield %>
+        <% end %>
       </div>
     </main>
     <%= render "layouts/footer"%>

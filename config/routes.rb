@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'students', to: "students#index"
-  get 'student/:id', to: "students#show"
+
   root 'home#index'
 
+  resources :students, only: [:show, :index]
   resources :courses
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  resources :courses_students, only: [:create, :destroy]
+  devise_for :users
 
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     get 'signup', to: 'devise/registrations#new'
   end
+
 end

@@ -1,12 +1,16 @@
 <div class="col s6 m6">
     <div class="card blue-grey darken-1">
     <div class="card-content white-text">
-        <span class="card-title"><strong><%= course.short_name %></strong></span>
-        <p><%= course.description.truncate(100, separator: " ")%></p>
+        <span class="card-title"><strong><%= course.short_name.truncate(16) %></strong></span>
+        <p><%= course.description.truncate(80)%></p>
     </div>
     <div class="card-action">
-        <%= link_to "Enroll", "#" %>
-        <%= link_to "Info", course_path(course) %>
+        <% if @student_courses.index(course.id) %>
+            <span class="new badge orange accent-3" data-badge-caption= "You're in this class"></span>
+        <% else %>
+            <%= link_to "Enroll", courses_students_path(course_id:course.id), data:{"turbo-method": :post}  %>
+        <% end %>
+        <%= link_to "Info", course_path(course)  %>
     </div>
     </div>
 </div>

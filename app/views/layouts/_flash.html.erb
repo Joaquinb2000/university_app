@@ -1,8 +1,11 @@
-<% if !notice.nil? || !alert.nil? %>
+
+<% if !flash[:notice].nil? || !flash[:alert].nil? %>
    <div id="flash"
-      class="card-panel <%= notice ? "light-green lighten-1" : "yellow lighten-3 blue-grey-text text-darken-3" %>"
+      class="card-panel <%= !flash[:notice].nil? ? "light-green lighten-1" : "yellow lighten-3 blue-grey-text text-darken-3" %>"
       style= "display:none"
    >
-      <%= notice || alert %>
+   <% flash.each do |key, msg| %>
+      <%= msg %>
+   <% end %>
    </div>
 <% end %>
