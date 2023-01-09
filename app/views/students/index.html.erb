@@ -1,4 +1,5 @@
 <h2 class= "center-align">Students Listing</h2>
+<%= paginate @students %>
 <div class="row">
     <% @students.each do |student| %>
         <div class="col s6 m6">
@@ -6,3 +7,4 @@
         </div>
     <% end %>
 </div>
+<%= paginate @students %>

@@ -1,7 +1,9 @@
 <!-- Dropdown Structure -->
 
-<%= render "layouts/dropdown", val:1 %>
-<%= render "layouts/dropdown", val:2 %>
+<% if user_signed_in? %>
+  <%= render "layouts/dropdown", val:1 %>
+  <%= render "layouts/dropdown", val:2 %>
+<% end %>
 
 
 

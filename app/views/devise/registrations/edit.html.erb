@@ -1,7 +1,7 @@
 <%= render layout: "devise/shared/card_form_wrapper", locals: {
   title: "Edit Profile",
-  path: user_registration_path(resource_name),
-  method: :patch } do |f| %>
+  path: user_registration_path,
+  data:{"turbo": true, "turbo-method": :patch} } do |f| %>
 
       <div class="input-field">
         <%= f.label :name, "Full name" %>
@@ -46,4 +46,4 @@
 
 
 <% end %>
-    <p class= "center-align"><%= link_to "Cancel my account", root_path, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure? Your information will be deleted" }, class:"waves-effect waves-light btn red darken-1" %></p>
+    <p class= "center-align"><%= link_to "Cancel my account", user_registration_path, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure? Your information will be deleted" }, class:"waves-effect waves-light btn red darken-1" %></p>
